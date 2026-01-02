@@ -116,9 +116,9 @@ app.use((req, res, next) => {
 // error handler (ALWAYS LAST)
 app.use((err, req, res, next) => {
   const { statusCode = 500, message = "Something went wrong!" } = err;
-  res.status(statusCode).send(message);
+  res.render("error.ejs", { statusCode, message });
 });
 
 app.listen(8080, () => {
-  console.log("Server started on port 8080");
+  console.log("Server started on port 8080"); 
 }); 
