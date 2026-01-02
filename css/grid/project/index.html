@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>responsive cards</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+          
+        }
+
+        .box{
+            width: 250px;
+            height: 500px;
+            border: 2px solid black;
+           margin: 10px;
+        }
+        img{
+            align-self: center;
+            width: 240px;
+            height: 200px;
+            margin:5px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 5px;
+        }
+        h3{
+            font-weight: 1500;
+            padding: 10px;
+            padding-left: 1px;
+        }
+        p{
+            text-align: start;
+            padding-left: 2px;
+        }
+        @media (max-width: 375px) {
+            body{
+                flex-wrap: wrap;
+                
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="box" id="boy">
+        <img src="/css/projects/cardhover_effect/img/shivanshu.jpg" alt="shivanshu">
+        <h3>Shivanshu chauhan</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio voluptates officia unde commodi dicta eos dolor
+            culpa voluptatum ab exercitationem. Culpa placeat sit minima laboriosam magnam blanditiis reprehenderit
+            libero suscipit corporis temporibus ex, non natus ipsam, maxime ea dolorum quisquam illum doloremque iure
+            tenetur necessitatibus voluptate voluptatem! Et, commodi veritatis!</p>
+    </div>
+    <div class="box" id="girl">
+        <img src="/css/projects/cardhover_effect/img/navya.jpg" alt="navya">
+        <h3>Navaya jain</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad totam molestiae, veniam similique at molestias
+            exercitationem aliquam iusto repellat ducimus odit non sapiente fugiat? Delectus voluptatibus, quod libero
+            quaerat optio deleniti, facere laboriosam consequuntur eveniet ab porro rem nulla consectetur numquam nobis
+            nihil fugiat impedit fugit animi inventore rerum dolorem?</p>
+    </div>
+</body>
+
+</html>

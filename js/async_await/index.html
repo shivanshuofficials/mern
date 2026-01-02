@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async and await</title>
+</head>
+<body>
+
+
+    <script>
+        async function greet() {
+            // throw "weak connection"
+            //abc() un cokmment to reject
+            return "hello";
+        }
+
+        greet()
+        .then((res)=>{
+              console.log("promise resolved");
+              console.log("result was :", res);      
+        })
+        .catch((err)=>{
+            console.log("promise rejected" , err);
+            
+        })
+    </script>
+</body>
+</html>

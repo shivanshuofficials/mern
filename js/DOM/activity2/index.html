@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        let para = document.createElement("p");
+        para.innerText = "hey I am red!.";
+        para.classList.add("red")
+        para.style.color = "red";
+        document.body.append(para)
+
+
+        let h3 = document.createElement("h3");
+        h3.innerText = "I am nlue h3.";
+        h3.classList.add("blue")
+        h3.style.color = "blue";
+        document.body.append(h3)
+
+
+        let div = document.createElement("div");
+        let h1 = document.createElement("h1");
+        let p = document.createElement("p");
+        div.style.backgroundColor = "pink";
+        div.style.border = "2px solid black";
+        div.style.height = "100px";
+        div.style.width = "400px";
+        div.classList.add("green")
+        document.body.append(div)
+        h1.innerText = "I am in a div";
+        p.innerText = "ME TOO!";
+        div.append(h1);
+        div.append(p);
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Example</title>
+</head>
+<body>
+  <input id="text" type="text" placeholder="text" />
+  <p></p>
+
+  <script>
+    let inp = document.querySelector("#text");
+    let p = document.querySelector("p");
+
+    inp.addEventListener("input", function () {
+      p.innerText = inp.value;
+    });
+  </script>
+</body>
+</html>

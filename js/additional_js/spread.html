@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //spread operator
+        let arr = [1, 2, 3, 4, 5];
+        let arr2 = [...arr, 6, 7, 8, 9, 10];
+        console.log(...arr);
+        console.log(arr2);
+
+
+        let char = "shivanshu";
+        let char2 = [..."hello"];
+        console.log(...char);
+        console.log(...char2);
+        
+        
+        //spread operator with objects
+        const data = {
+            name: "Shivanshu",
+            age: 20,
+            city: "Delhi"
+        };
+        const datacopy = {...data,
+            country: "India",
+            gender:"male"
+        };
+
+    </script>
+</body>
+
+</html>

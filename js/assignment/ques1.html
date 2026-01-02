@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let input = document.createElement("input");
+        input.type = "text";
+        input.placeholder = "username";
+        let btn = document.createElement("button");
+        btn.innerText = "click me!";
+
+        document.body.append(input);
+        document.body.append(btn);
+        btn.id = "btn";
+
+        let a = document.getElementById("btn");
+        a.style.backgroundColor = "blue";
+        a.style.color = "white";
+
+        let h1 = document.createElement("h1");
+        h1.innerText = "DOM practice";
+        h1.style.textDecoration = "underline";
+        h1.style.color = "purple";
+        document.body.append(h1);
+
+        let p = document.createElement("p");
+        p.innerhtml = "Apna College <b>Delta</b> Practice.";
+
+        document.body.append(p);
+
+
+    </script>
+</body>
+
+</html>

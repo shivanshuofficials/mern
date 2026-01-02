@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background: green;
+            transition: width 2s ease-in 0.5s;
+        }
+
+        #box1:hover {
+            width: 600px;
+
+        }
+
+        #box2 {
+            width: 100px;
+            height: 100px;
+            background: red;
+            transition: transform 2s ease-in 0.2s;
+
+        }
+
+        #box2:hover {
+            transform: translate(200px,200px) rotate(90deg);
+        }
+
+        #box3 {
+            width: 100px;
+            height: 100px;
+            background: lightblue;
+            transition: transform 2s ease-in 0.2s;
+        }
+
+        #box3:hover {
+            transform: skew(20deg, 0deg);
+        }
+
+        #box4 {
+            width: 100px;
+            height: 100px;
+            background: lightgreen;
+            box-shadow: 2px 2px  5px green;
+        }
+
+        #myPic {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            background-image: url(/css/projects/cardhover_effect/img/shivanshu.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1">This is box1</div>
+    <div id="box2">This is box2</div>
+    <div id="box3">This is box3</div>
+    <div id="box4">This is box4</div>
+    <div id="myPic">This is my Pic</div>
+
+</body>
+
+</html>

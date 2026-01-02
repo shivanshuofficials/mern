@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flexbox</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .container {
+            height: 300px;
+            width: 80%;
+            background-color: azure;
+            margin: 10px auto;
+            border: 2px solid black;
+            display: flex;
+            flex-direction:row;
+            justify-content: baseline;
+            /* flex-wrap: wrap; 
+            align-items: flex-end;  */
+            align-content:baseline;
+          
+        }
+        .blue{
+            /* align-self:center; */
+            /* flex-basis: 800px; */
+            flex-grow: 3;
+
+        }
+        .red {
+            /* flex-grow: 1; */
+            /* flex-shrink: ; */
+            /* flex-basis: 800px; */
+            flex: 1 1 30px;
+        }
+
+        .red,
+        .green,
+        .blue,
+        .pink,
+        .voilet,
+        .yellow {
+            width: 30px;
+            height: 80px;
+            text-align: center;
+            font: size 1.5rem;
+            color: black;
+       
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .pink {
+            background-color: pink;
+        }
+
+        .voilet {
+            background-color: violet;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="red"> red</div>
+        <div class="green"> green</div>
+        <div class="blue">blue</div>
+        <div class="pink">pink</div>
+        <div class="voilet">voilet</div>
+        <div class="yellow">yellow</div>
+        <div class="blue"> blue</div>
+    </div>
+ 
+</body>
+
+</html>

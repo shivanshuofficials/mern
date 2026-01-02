@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loader</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .loader{
+            height: 100px;
+            width: 100px;
+            border: 10px solid #5f5b5b;
+            border-radius: 50%;
+            border-top-color: rgb(253, 0, 118);
+            animation: load 5s   infinite linear ;
+
+        }
+        @keyframes load {
+            0%{
+             transform: (0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+
+    </div>
+</body>
+</html>

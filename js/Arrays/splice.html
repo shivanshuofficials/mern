@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.
+// It returns an array containing the deleted elements.
+let arr = ['a', 'b', 'c', 'd', 'e'];
+// Remove 2 elements starting from index 1
+let removedElements = arr.splice(1, 2);
+console.log(arr); // Output: ['a', 'd', 'e']
+console.log(removedElements); // Output: ['b', 'c']
+// Add 2 elements at index 1
+arr.splice(1, 0, 'x', 'y');
+console.log(arr); // Output: ['a', 'x', 'y', 'd', 'e']
+// Replace 1 element at index 2 with 'z'
+arr.splice(2, 1, 'z');
+console.log(arr); // Output: ['a', 'x', 'z', 'd', 'e']
+    </script>
+</body>
+</html>

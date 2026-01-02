@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card hover effect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            font-style: bold;
+        }
+
+        body {
+            background-color: rgb(180, 49, 49);
+            display: flex;
+        }
+
+        .cards {
+            display: flex;  
+        }
+
+        #boy,
+        #girl {
+            width: 200px;
+            height: 250px;
+            margin: 10px;
+            border-radius: 10px;
+            background-color: white;
+            border: 1px solid #ccc;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(39, 25, 25, 0.5);
+        }
+
+        #img {
+            width: 100%;
+            height: 50%;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px 10px 0 0;
+        }
+
+        #girl #img {
+            background-image: url(/css/projects/cardhover_effect/img/navya.jpg);
+        }
+
+        #boy #img {
+            background-image: url(/css/projects/cardhover_effect/img/shivanshu.jpg);
+        }
+    </style>
+</head>
+
+<body>
+    <section class="cards">
+        <div id="boy">
+            <div id="img"></div><br>
+            <h1>Shivanshu</h1><br>
+            <p>web devloper</p>
+        </div>
+        <div id="girl">
+            <div id="img"></div><br>
+            <h1>Navya jain</h1><br>
+            <p>web devloper</p>
+        </div>
+    </section>
+
+</body>
+
+</html>

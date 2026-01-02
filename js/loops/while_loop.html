@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //guess the movie
+        let movie = "navya";
+        let guess =prompt("enter the movie name");
+        
+      
+        while ((guess != movie) && (guess != "quit")) {
+          console.log(" Wrong guess, try again!");
+            guess = prompt("enter the movie name");
+        }
+        if (guess == movie) {
+            console.log("Congratulations! You guessed the movie correctly.");
+        } 
+    </script>
+</body>
+</html>

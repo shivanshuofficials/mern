@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let todo = [];
+        let input = prompt("Enter a todo item (or type 'exit' to finish):");
+        while (true) {
+            if (input == "exit") {
+                console.log("quiting app");
+                break;
+            }
+            if (input == "list") {
+                console.log("__________");
+                for (let i = 0; i < todo.length; i++) {
+                    console.log(i, todo[i]);
+                }
+                console.log("__________");
+            }
+            else if (input == "add") {
+                let task = prompt("Enter a task to add:");
+                todo.push(task);
+                console.log(`Task added.`);
+
+
+            }
+
+            else if (input == "delete") {
+                let taskToDelete = prompt("Enter the task to delete:");
+                todo.splice(taskToDelete, 1);
+                console.log("Task deleted");
+            }
+            else {
+                console.log("Invalid command. Please enter 'add', 'delete', 'list', or 'exit'.");
+            }
+            input = prompt("Enter a todo item (or type 'exit' to finish):");
+        }
+    </script>
+</body>
+
+</html>

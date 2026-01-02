@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo</title>
+</head>
+
+<body>
+    <h1>Todo</h1>
+    <input type="text" placeholder="enter task">
+    <button type="submit">add task</button>
+    <ul></ul>
+    <script>
+        let btn = document.querySelector("button");
+        let input = document.querySelector("input");
+        let ul = document.querySelector("ul");
+
+        btn.addEventListener("click", function () {
+            let item = document.createElement("li");
+            item.innerText = input.value;
+
+
+            let del = document.createElement("button")
+            del.innerText = "delete";
+            del.classList.add("delete")
+
+            item.appendChild(del) 
+            ul.appendChild(item)
+            input.value = ""
+
+            let delbtns = document.querySelectorAll(".delete")
+            for (del of delbtns) {
+                del.addEventListener("click", function () {
+                    console.log("delete");
+                    let par = this.parentElement;
+                    par.remove();
+                    
+                })
+            }
+        })
+
+    </script>
+</body>
+
+</html>

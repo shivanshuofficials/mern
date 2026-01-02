@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Example of nested for...of loops
+        const outerArray = [
+            ['a', 'b', 'c'],
+            ['d', 'e', 'f'],
+            ['g', 'h', 'i']
+        ];
+
+        for ( innerArray of outerArray) {
+            console.log('Inner Array:');
+            for ( item of innerArray) {
+                console.log(item);
+            }
+        }
+    </script>
+</body>
+</html>

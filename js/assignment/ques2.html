@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+       let btn = document.createElement("button");
+        let alphabets = " ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+         btn.innerHTML = "Click Me";
+        //mouseout
+         document.body.append(btn);
+        btn.addEventListener("mouseout", function() {
+            btn.style.backgroundColor = "green";
+        }); 
+        //click
+        btn.addEventListener("click", function() {
+            alert("Mouse out event triggered!");
+        }); 
+
+        let input = document.createElement("input");
+        input.type = "text";
+        input.placeholder = "Enter text here";
+        document.body.append(input);
+        //keypress
+       
+
+        let h2 = document.createElement("h2");
+        document.body.append(h2);
+        //show innertext of input in h2
+        input.addEventListener("input", function() {
+            h2.innerText = input.value;
+        });
+      
+
+       //load
+        // window.addEventListener("load", function() {
+        //     alert("Page has fully loaded!");
+        // });
+
+      
+        // //scroll
+        // window.addEventListener("scroll", function() {
+        //     alert("Page has been scrolled!");
+        // });
+
+
+    </script>
+</body>
+</html>

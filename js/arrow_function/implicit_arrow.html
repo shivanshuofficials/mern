@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Implicit return in arrow function
+        const sum = (a, b) => a + b;
+
+        // Using the sum function
+        console.log(sum(5, 10)); // Output: 15
+
+        // Implicit return with an object
+        const createPerson = (name, age) => ({ name, age });
+
+        // Using the createPerson function
+        const person = createPerson('Alice', 30);
+        console.log(person); // Output: { name: 'Alice', age: 30 }
+    </script>
+</body>
+</html>
