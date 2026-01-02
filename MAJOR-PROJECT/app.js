@@ -4,6 +4,7 @@ const path = require("path");
 const ejs = require("ejs");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
+const { listingSchema } = require("./schema.js"); 
 
 //mongoose
 const mongoose = require("mongoose");
@@ -30,7 +31,7 @@ const validateListing = (req, res, next) => {
   if (!title || !description || !price || !location || !country) {
     throw new ExpressError(400, "Please send all required fields for listing");
   }
-  next();
+    next();
 };
 
 app.get("/", (req, res) => {
@@ -52,7 +53,11 @@ app.get("/listings/new", (req, res) => {
 
 // CREATE route
 app.post("/listings", validateListing, wrapAsync(async (req, res, next) => {
-  const newListing = new Listing(req.body.listing);
+ let result = listingSchema.validate(req.body);
+ if(result.error){
+  throw new ExpressError(400, result.error);
+ }
+  const newListing = new Listing(result.value); 
   await newListing.save();
   res.redirect("/listings");
 }));
@@ -120,5 +125,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(8080, () => {
-  console.log("Server started on port 8080"); 
+  console.log("Server started on port 8080");
 }); 
