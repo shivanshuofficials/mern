@@ -39,6 +39,40 @@
                </button>
             </form>
          </div>
+         <hr>
+         <!-- review -->
+         <div class="col-8 offset-3">
+            <h4>Leave a review</h4>
+            <form action="/listings/<%=listing._id%>/reviews" method="POST" novalidate class="needs-validation">
+               <div class="mb-3 mt-3">
+                  <label for="rating" class="form-label">Rating</label>
+                  <input type="range" min="1" max="5" name="review[rating]" id="rating" class="form-range">
+               </div>
+               <div class="mb-3 mt-3">
+                  <label for="comment" class="form-label">Comment</label>
+                  <textarea name="review[comment]" id="comment" cols="30" rows="5" class="form-control"
+                     required></textarea>
+                  <div class="invalid-feedback">
+                     Please enter a comment.
+                  </div>
+               </div>
+               <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <hr>
+            <h4>All Reviews</h4>
+            <% if (listing.reviews.length === 0) { %>
+               <p>No reviews yet.</p>
+            <% } else { %>
+               <ul>
+                  <% listing.reviews.forEach(review => { %>
+                     <li>
+                        <p><%= review.comment %></p>
+                        <p><%= review.rating %> stars</p>
+                     </li>
+                  <% }) %>
+               </ul>
+            <% } %>
+         </div>
 
       </div>
    </div>
