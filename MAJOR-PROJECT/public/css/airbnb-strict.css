@@ -1,0 +1,347 @@
+/* Zero-Derivation Airbnb Strict CSS */
+
+:root {
+    --primary-color: #FF385C;
+    --text-primary: #222222;
+    --text-secondary: #717171;
+    --border-color: #DDDDDD;
+    /* Gray-200 equivalent */
+    --bg-white: #FFFFFF;
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-primary);
+    background-color: var(--bg-white);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Container */
+.max-w-1280 {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-primary);
+    margin: 0;
+    font-weight: 600;
+}
+
+.text-secondary {
+    color: var(--text-secondary);
+}
+
+/* Grid System */
+.grid {
+    display: grid;
+}
+
+.grid-cols-12 {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.col-span-8 {
+    grid-column: span 8 / span 8;
+}
+
+.col-span-4 {
+    grid-column: span 4 / span 4;
+}
+
+.gap-4 {
+    gap: 1rem;
+}
+
+.gap-6 {
+    gap: 1.5rem;
+}
+
+.gap-12 {
+    gap: 3rem;
+}
+
+/* Utilities */
+.rounded-xl {
+    border-radius: 0.75rem;
+}
+
+.rounded-l-xl {
+    border-top-left-radius: 0.75rem;
+    border-bottom-left-radius: 0.75rem;
+}
+
+.rounded-r-xl {
+    border-top-right-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+}
+
+.rounded-2xl {
+    border-radius: 1rem;
+}
+
+.shadow-xl {
+    box-shadow: var(--shadow-xl);
+}
+
+.border {
+    border: 1px solid var(--border-color);
+}
+
+.border-b {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.p-6 {
+    padding: 1.5rem;
+}
+
+.mb-6 {
+    margin-bottom: 1.5rem;
+}
+
+.mt-6 {
+    margin-top: 1.5rem;
+}
+
+.sticky {
+    position: sticky;
+}
+
+.top-24 {
+    top: 6rem;
+    /* 24 * 0.25rem = 6rem */
+}
+
+.w-full {
+    width: 100%;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.object-cover {
+    object-fit: cover;
+}
+
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+/* Bento Grid */
+.bento-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    height: 400px;
+    /* Fixed height for the gallery */
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+.bento-main {
+    height: 100%;
+}
+
+.bento-subgrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.5rem;
+    height: 100%;
+}
+
+.bento-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.bento-img:hover {
+    opacity: 0.9;
+}
+
+/* Booking Widget */
+.booking-widget {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-xl);
+}
+
+.booking-price {
+    font-size: 1.375rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.booking-inputs {
+    border: 1px solid #B0B0B0;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.booking-dates {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid #B0B0B0;
+}
+
+.booking-date-input {
+    padding: 0.75rem;
+}
+
+.booking-date-input:first-child {
+    border-right: 1px solid #B0B0B0;
+}
+
+.booking-guests {
+    padding: 0.75rem;
+}
+
+.booking-label {
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+}
+
+.booking-value {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.btn-reserve {
+    background-color: var(--primary-color);
+    color: white;
+    width: 100%;
+    padding: 0.875rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.btn-reserve:active {
+    transform: scale(0.98);
+}
+
+.no-charge-text {
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-top: 1rem;
+}
+
+.price-breakdown {
+    margin-top: 1.5rem;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    font-weight: 600;
+}
+
+/* Amenities */
+.amenities-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.amenity-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-primary);
+}
+
+/* Reviews */
+.review-bar-container {
+    width: 100%;
+    height: 4px;
+    background-color: #DDDDDD;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.review-bar-fill {
+    height: 100%;
+    background-color: #222222;
+}
+
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+    .grid-cols-12 {
+        grid-template-columns: 1fr;
+    }
+
+    .col-span-8,
+    .col-span-4 {
+        grid-column: auto;
+    }
+
+    .bento-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .bento-subgrid {
+        display: none;
+        /* Hide subgrid on mobile for simplicity or stack them */
+    }
+
+    .sticky {
+        position: static;
+    }
+}

@@ -1,0 +1,220 @@
+/* Split Screen Auth Design */
+
+/* Card Container */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 2rem 0;
+}
+
+.split-card {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    min-height: 600px;
+}
+
+/* Left Side - Form */
+.auth-left {
+    flex: 1;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.auth-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.auth-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 0.5rem;
+}
+
+.auth-subtitle {
+    color: #717171;
+    font-size: 0.95rem;
+}
+
+/* Social Buttons */
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid #dddddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #222;
+    transition: all 0.2s ease;
+    background: #fff;
+    text-decoration: none;
+}
+
+.social-btn:hover {
+    background: #f7f7f7;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    color: #222;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #717171;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #dddddd;
+}
+
+.divider::before {
+    margin-right: 1rem;
+}
+
+.divider::after {
+    margin-left: 1rem;
+}
+
+/* Form Styling */
+.auth-form .form-control {
+    background-color: #f7f7f7;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    /* Rounded but not full pill for better text fit */
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+    margin-bottom: 0;
+    /* Handled by mb-3 wrapper */
+    transition: all 0.2s ease;
+}
+
+.auth-form .form-control:focus {
+    background-color: #fff;
+    border-color: #222;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+}
+
+.auth-form label {
+    display: none;
+    /* Hiding labels as per reference image (using placeholders) */
+}
+
+/* Re-enable labels for accessibility if needed */
+.visually-hidden-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.btn-primary-auth {
+    background-color: #ff385c;
+    /* Airbnb Red */
+    border: none;
+    border-radius: 50px;
+    /* Pill shape */
+    padding: 0.8rem 2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary-auth:hover {
+    background-color: #d9324e;
+}
+
+.auth-footer {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #717171;
+}
+
+.auth-footer a {
+    color: #ff385c;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Right Side - Video */
+.auth-right {
+    flex: 1;
+    position: relative;
+    display: none;
+    /* Hidden on mobile */
+    overflow: hidden;
+    background-color: #000;
+    /* Fallback */
+}
+
+.auth-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Overlay */
+.auth-right::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+    pointer-events: none;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .auth-right {
+        display: block;
+    }
+}
+
+/* Validation Feedback Position */
+.invalid-feedback {
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    margin-left: 0.5rem;
+}

@@ -1,28 +1,100 @@
-<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+<nav class="navbar navbar-expand-md sticky-top">
   <div class="container-fluid">
 
-    <!-- Brand Icon -->
-    <a class="navbar-brand d-flex align-items-center" href="/">
-      <img 
-        src="/images/airbnb2.png" 
-        alt="Logo" 
-        width="50" 
-        height="50"
-        class="d-inline-block align-text-top"
-      >
+    <!-- Brand -->
+    <a class="navbar-brand d-flex align-items-center" href="/listings">
+      <i class="fa-regular fa-compass fa-lg me-2" style="color: var(--primary-color);"></i>
+      Wanderlust
     </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <!-- Search Bar (Centered) -->
+    <div class="search-bar-container d-none d-md-flex">
+      <form action="/listings" method="GET" class="search-bar">
+        <input type="text" name="search" class="search-input" placeholder="Search destinations"
+          value="<%= typeof search !== 'undefined' ? search : '' %>">
+        <button type="submit" class="search-btn">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+    </div>
 
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link" href="/">Home</a>
-        <a class="nav-link" href="/listings">All listings</a>
-        <a class="nav-link" href="/listings/new">Add new listing</a>
+    <!-- Right Side Menu -->
+    <div class="d-flex align-items-center gap-3">
+
+      <!-- Host Link -->
+      <a href="/listings/new" class="host-link d-none d-md-block">Wanderlust your home</a>
+
+      <!-- Dark Mode Toggle -->
+      <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+
+      <!-- User Menu -->
+      <div class="dropdown">
+        <div class="user-menu-btn" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-bars user-menu-icon"></i>
+          <div class="user-avatar">
+            <% if (currUser) { %>
+              <!-- Show first letter of username if logged in -->
+              <%= currUser.username[0].toUpperCase() %>
+                <% } else { %>
+                  <i class="fa-solid fa-user"></i>
+                  <% } %>
+          </div>
+        </div>
+
+        <ul class="dropdown-menu dropdown-menu-end">
+          <% if (!currUser) { %>
+            <li><a class="dropdown-item fw-bold" href="/signup">Sign up</a></li>
+            <li><a class="dropdown-item" href="/login">Log in</a></li>
+            <% } else { %>
+              <li>
+                <div class="dropdown-item disabled text-muted">Signed in as <b>
+                    <%= currUser.username %>
+                  </b></div>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="/listings">All Listings</a></li>
+              <li><a class="dropdown-item" href="/listings/new">Host your home</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item text-danger" href="/logout">Log out</a></li>
+              <% } %>
+        </ul>
       </div>
     </div>
 
   </div>
 </nav>
+
+<!-- Dark Mode Script -->
+<script>
+  const themeToggle = document.getElementById('themeToggle');
+  const icon = themeToggle.querySelector('i');
+
+  // Check local storage
+  const currentTheme = localStorage.getItem('theme');
+  if (currentTheme === 'dark') {
+    document.body.setAttribute('data-theme', 'dark');
+    icon.classList.remove('fa-moon');
+    icon.classList.add('fa-sun');
+  }
+
+  themeToggle.addEventListener('click', () => {
+    let theme = document.body.getAttribute('data-theme');
+    if (theme === 'dark') {
+      document.body.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'light');
+      icon.classList.remove('fa-sun');
+      icon.classList.add('fa-moon');
+    } else {
+      document.body.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+      icon.classList.remove('fa-moon');
+      icon.classList.add('fa-sun');
+    }
+  });
+</script>

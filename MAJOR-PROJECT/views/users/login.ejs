@@ -1,0 +1,79 @@
+<% layout("/layouts/boilerplate") %>
+
+    <div class="auth-container">
+        <div class="split-card">
+            <!-- Left Side: Form -->
+            <div class="auth-left">
+                <div class="auth-header">
+                    <h1 class="auth-title">Welcome Back</h1>
+                    <p class="auth-subtitle">Login to continue your journey</p>
+                </div>
+
+                <!-- Social Login Placeholders -->
+                <div class="social-buttons">
+                    <a href="/auth/facebook" class="social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"
+                            style="color: #1877F2;"></i></a>
+                    <a href="/auth/google" class="social-btn" title="Google"><i class="fa-brands fa-google"
+                            style="color: #DB4437;"></i></a>
+                    <a href="/auth/apple" class="social-btn" title="Apple"><i class="fa-brands fa-apple"></i></a>
+                </div>
+
+                <div class="divider">or do via email</div>
+
+                <form action="/login" method="POST" class="auth-form needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="username" class="visually-hidden-label">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Username"
+                            required>
+                        <div class="invalid-feedback">
+                            Please enter your username.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="visually-hidden-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password"
+                            required>
+                        <div class="invalid-feedback">
+                            Please enter your password.
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-primary-auth">
+                        Login
+                    </button>
+                </form>
+
+                <div class="auth-footer">
+                    Don't have an account? <a href="/signup">Sign Up</a>
+                </div>
+            </div>
+
+            <!-- Right Side: Video -->
+            <div class="auth-right">
+                <video class="auth-video" autoplay loop muted playsinline>
+                    <source
+                        src="https://res.cloudinary.com/dha50uhkq/video/upload/v1768034140/wanderlust_assets/login_bg_video.mp4"
+                        type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Bootstrap validation script
+        (() => {
+            'use strict'
+            const forms = document.querySelectorAll('.needs-validation')
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const Review = require("./review.js");  
+const Review = require("./review.js");
 const ListingSchema = new Schema({
     title: {
         type: String,
@@ -8,28 +8,47 @@ const ListingSchema = new Schema({
     },
     description: String,
     image: {
-        filename: String,
-        url: {
-            type: String,
-            default: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-            set: (v) => v === "" ? "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG90ZWx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60" : v,
-        }
+        url: String,
+        filename: String
     },
     price: {
         type: Number,
         required: true,
         min: 0
     },
-    location: String,
+    location: {
+        pincode: {
+            type: Number,
+        },
+        address: String,
+        city: String,
+        state: String,
+        country: String
+    },
     country: String,
+    geometry: {
+        type: {
+            type: String, // Don't do `{ location: { type: String } }`
+            enum: ['Point'], // 'location.type' must be 'Point'
+            required: true
+        },
+        coordinates: {
+            type: [Number],
+            required: true
+        }
+    },
     reviews: [{
         type: Schema.Types.ObjectId,
         ref: "Review"
-    }]
+    }],
+    author: {
+        type: Schema.Types.ObjectId,
+        ref: "User"
+    }
 });
 
 ListingSchema.post("findOneAndDelete", async function (listing) {
-    if(listing) {
+    if (listing) {
         await Review.deleteMany({ _id: { $in: listing.reviews } });
     }
 });

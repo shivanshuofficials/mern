@@ -5,8 +5,16 @@ module.exports.listingSchema = Joi.object({
         title: Joi.string().required(),
         description: Joi.string().required(),
         price: Joi.number().required().min(0),
-        location: Joi.string().required(),
-        country: Joi.string().required(),
+        location: Joi.alternatives().try(
+            Joi.string(),
+            Joi.object({
+                pincode: Joi.number().required(),
+                address: Joi.string().required(),
+                city: Joi.string().required(),
+                state: Joi.string().required(),
+                country: Joi.string().required()
+            })
+        ).required(),
         image: Joi.object({
             url: Joi.string().allow("", null),
             filename: Joi.string().allow("", null),
